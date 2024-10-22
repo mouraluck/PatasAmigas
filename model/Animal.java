@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Optional;
+
 public class Animal {
 
     private Integer idAnimal;
@@ -7,15 +9,15 @@ public class Animal {
     private String especie;
     private Integer idade;
     private String historico;
-    private Boolean statusAdocao;
-    private Tutores tutor;
+    private Optional<Boolean> statusAdocao;
+    private String tutor;
 
-    public Animal(Integer idAnimal, Integer idade, String nome, String especie, String historico, Boolean statusAdocao, Tutores tutor){
+    public Animal(Integer idAnimal, Integer idade, String nome, String especie, String historico, Boolean statusAdocao, String tutor){
         this.idAnimal = idAnimal;
         this.nome = nome;
         this.especie = especie;
         this.historico = historico;
-        this.statusAdocao = statusAdocao;
+        this.statusAdocao = Optional.ofNullable(statusAdocao);
         this.tutor = tutor;
         this.idade = idade;
     }
@@ -61,19 +63,19 @@ public class Animal {
         this.historico = historico;
     }
 
-    public Boolean getStatusAdocao() {
+    public Optional<Boolean> getStatusAdocao() {
         return statusAdocao;
     }
 
     public void setStatusAdocao(Boolean statusAdocao) {
-        this.statusAdocao = statusAdocao;
+        this.statusAdocao = Optional.ofNullable(statusAdocao);
     }
 
-    public Tutores getTutor() {
+    public String getTutor() {
         return tutor;
     }
 
-    public void setTutor(Tutores tutor) {
+    public void setTutor(String tutor) {
         this.tutor = tutor;
     }
 

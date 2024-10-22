@@ -39,6 +39,7 @@ public class Main {
                 case 4:
                     System.out.println();
                     AnimalController.CadastrarAnimal(scanner);
+                    System.out.println("\nAnimal cadastrado com sucesso!!!");
                     break;
 
                 case 5:
